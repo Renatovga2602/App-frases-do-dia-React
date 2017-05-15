@@ -1,53 +1,24 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+import React from 'react';
+import { Text, AppRegistry } from 'react-native';
+//estilos
 
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-
-export default class app2 extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-    );
+const Styles = {
+  styleText: {
+    fontSize: 30,
+    backgroundColor: '#08509B',
+    padding: 10,
+    margin: 30
+   
   }
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+//componentes
+const App = () => {
+  return (
+    <Text style={Styles.styleText}>
+      Frases do dia
+    </Text>
+  );
 
-AppRegistry.registerComponent('app2', () => app2);
+};
+AppRegistry.registerComponent('app2', () => App);
