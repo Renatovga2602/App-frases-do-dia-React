@@ -1,42 +1,58 @@
 import React from 'react';
-import { Text, AppRegistry,View } from 'react-native';
+import { Text, AppRegistry,View,Button,TouchableOpacity } from 'react-native';
 //estilos
 
 const Styles = {
-  styleText: {
-    fontSize: 30,
-    backgroundColor: '#08509B',
-    // padding: 10,
-    // margin: 50
-    color: '#fff',
-    //textDecorationLine: 'underline'
-    textAlign: 'center',
-    heigth: 60,
-    width: 60
-    //fontStyle: 'italic',
-    //fontWeight: 'bold'//100 e 900
+  principal: {
+ 
+    paddingTop: 40
   },
-  styleView: {
-    backgroundColor: 'skyblue',
-    heigth: 300,
-    justifyContent: 'center',//alinha na vertical
-    alignItems: 'flex-end'//alinha na horizontal
-    //flexDorection: 'row' --define a direção que as caixas ficaram;
-
+ 
+  botao:{
+  
+    backgroundColor: '#48BBEC',
+    padding: 10,
+    borderColor: '#d8eb8',
+    borderWidth: 1,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: {width:0, heigth:2},
+    shadowOpacity: 0.4
+},
+  textoBotao:{
+   
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+    alignSelf: 'center'
   }
-};
 
+};
+const buttonPress = () => {
+  alert ('Butão pressionado');
+}
 //componentes
 const App = () => {
  
-  const {styleText, styleView} = Styles;
+  const {principal, botao,textoBotao} = Styles;
    
     return (
-  <View style= {styleView}>
-     <Text style={styleText}>
-       Frases do dia
-        </Text>
-          </View>
+      <View style={principal}>
+        
+
+        <Button
+          onPress={buttonPress}
+          title= 'Clique aqui'
+          color= '#841584'
+          accessibilityLabel='Clique para abrir as noticias!!!'//recurso de acessibilidade
+        
+        />
+        <TouchableOpacity style={botao}>
+          <Text style={textoBotao}>Clique aqui!</Text>
+        </TouchableOpacity>
+
+      </View>
+  
   );
 
 };
